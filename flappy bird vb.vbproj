@@ -86,6 +86,14 @@
       <DependentUpon>Application.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Bases\BaseModel.vb" />
+    <Compile Include="Managers\ApplicationManager.vb" />
+    <Compile Include="Managers\GameManager.vb" />
+    <Compile Include="Bases\Interfaces\IManager.vb" />
+    <Compile Include="Managers\PlayerManager.vb" />
+    <Compile Include="Managers\StateManager.vb" />
+    <Compile Include="Models\Pipe.vb" />
+    <Compile Include="Models\Player.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -102,10 +110,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="View\GamePlay.Designer.vb">
-      <DependentUpon>GamePlay.vb</DependentUpon>
+    <Compile Include="Views\ViewGamePlay.Designer.vb">
+      <DependentUpon>ViewGamePlay.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\GamePlay.vb">
+    <Compile Include="Views\ViewGamePlay.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -119,8 +127,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GamePlay.resx">
-      <DependentUpon>GamePlay.vb</DependentUpon>
+    <EmbeddedResource Include="Views\ViewGamePlay.resx">
+      <DependentUpon>ViewGamePlay.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -138,9 +146,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Icons\" />
-    <Folder Include="Assets\Sprites\" />
-    <Folder Include="Controller\" />
-    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\background-day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\background-night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\base.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\redbird-downflap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\redbird-upflap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\redbird-midflap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Sprites\pipe-green.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

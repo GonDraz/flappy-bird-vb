@@ -1,7 +1,7 @@
 ﻿Public Class Application
-
+    Private applicationManager As ApplicationManager
     Private Sub Application_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SwitchForm(View.GamePlay)
+        applicationManager = New ApplicationManager
     End Sub
 
     Public Sub SwitchForm(form As Form)
