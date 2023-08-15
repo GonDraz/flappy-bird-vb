@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ViewGamePlay
+Partial Class GameScreen
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,9 +22,9 @@ Partial Class ViewGamePlay
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GameScreen))
         Me.base = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.pauseButton = New Guna.UI2.WinForms.Guna2ImageButton()
         CType(Me.base, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -40,20 +40,29 @@ Partial Class ViewGamePlay
         Me.base.TabIndex = 0
         Me.base.TabStop = False
         '
-        'Timer1
+        'pauseButton
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 10012312
+        Me.pauseButton.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.pauseButton.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.pauseButton.Image = CType(resources.GetObject("pauseButton.Image"), System.Drawing.Image)
+        Me.pauseButton.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.pauseButton.ImageRotate = 0!
+        Me.pauseButton.Location = New System.Drawing.Point(12, 12)
+        Me.pauseButton.Name = "pauseButton"
+        Me.pauseButton.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.pauseButton.Size = New System.Drawing.Size(64, 54)
+        Me.pauseButton.TabIndex = 1
         '
-        'ViewGamePlay
+        'GameScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.flappy_bird_vb.My.Resources.Resources.background_day
         Me.ClientSize = New System.Drawing.Size(1280, 688)
+        Me.Controls.Add(Me.pauseButton)
         Me.Controls.Add(Me.base)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "ViewGamePlay"
+        Me.Name = "GameScreen"
         Me.Text = "ViewGamePlay"
         CType(Me.base, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -61,5 +70,5 @@ Partial Class ViewGamePlay
     End Sub
 
     Friend WithEvents base As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents pauseButton As Guna.UI2.WinForms.Guna2ImageButton
 End Class

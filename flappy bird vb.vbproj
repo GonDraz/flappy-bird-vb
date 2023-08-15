@@ -86,10 +86,24 @@
       <DependentUpon>Application.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bases\BaseModel.vb" />
+    <Compile Include="Entities\BaseModel.vb" />
+    <Compile Include="Entities\Interfaces\ISubscribable.vb" />
+    <Compile Include="Events.vb" />
+    <Compile Include="Screens\MenuScreen.Designer.vb">
+      <DependentUpon>MenuScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MenuScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\PreLoadScreen.Designer.vb">
+      <DependentUpon>PreLoadScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\PreLoadScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Managers\ApplicationManager.vb" />
     <Compile Include="Managers\GameManager.vb" />
-    <Compile Include="Bases\Interfaces\IManager.vb" />
+    <Compile Include="Entities\Interfaces\IManager.vb" />
     <Compile Include="Managers\PlayerManager.vb" />
     <Compile Include="Managers\StateManager.vb" />
     <Compile Include="Models\Pipe.vb" />
@@ -110,10 +124,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Views\ViewGamePlay.Designer.vb">
-      <DependentUpon>ViewGamePlay.vb</DependentUpon>
+    <Compile Include="Screens\GameScreen.Designer.vb">
+      <DependentUpon>GameScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewGamePlay.vb">
+    <Compile Include="Screens\GameScreen.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -127,8 +141,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ViewGamePlay.resx">
-      <DependentUpon>ViewGamePlay.vb</DependentUpon>
+    <EmbeddedResource Include="Screens\GameScreen.resx">
+      <DependentUpon>GameScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MenuScreen.resx">
+      <DependentUpon>MenuScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\PreLoadScreen.resx">
+      <DependentUpon>PreLoadScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

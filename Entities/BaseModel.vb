@@ -9,11 +9,11 @@ Public Class BaseModel
     Public WithEvents timerAnimation As New Timer(New System.ComponentModel.Container())
     Public animationImages As List(Of Bitmap)
     Dim indexAnimationImage As Int16 = 0
-    Public intervalAnimation As Int16
+    Public intervalAnimation As Int16 = 100
 
     'Acion
     Public WithEvents timerAcion As New Timer(New System.ComponentModel.Container())
-    Public intervalAcion As Int16 = 1
+    Public intervalAcion As Int16 = 10
 
     Public Sub New(images As List(Of Bitmap), intervalAnimation As Int16)
         If images Is Nothing Then
@@ -21,6 +21,7 @@ Public Class BaseModel
             Return
         End If
         Me.intervalAnimation = intervalAnimation
+        modelPicture.Image = images(0)
 
         animationImages = images
         SetPicture()

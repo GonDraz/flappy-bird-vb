@@ -1,6 +1,13 @@
-﻿Public Class Application
+﻿Imports flappy_bird_vb.Managers
+
+Public Class Application
+    Implements ISubscribable
     Private applicationManager As ApplicationManager
+
     Private Sub Application_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SwitchForm(PreLoadScreen)
+
+        Subscribe()
         applicationManager = New ApplicationManager
     End Sub
 
@@ -9,5 +16,22 @@
         form.TopLevel = False
         mainPanel.Controls.Add(form)
         form.Show()
+    End Sub
+
+    Public Sub Subscribe() Implements ISubscribable.Subscribe
+        AddHandler flappy_bird_vb.Events.MenuState, AddressOf OnMenuState
+        AddHandler flappy_bird_vb.Events.GameState, AddressOf OnGameState
+    End Sub
+
+    Public Sub OnMenuState()
+        SwitchForm(MenuScreen)
+    End Sub
+    Public Sub OnGameState()
+        SwitchForm(GameScreen)
+    End Sub
+
+
+
+    Public Sub Unsubscribe() Implements ISubscribable.Unsubscribe
     End Sub
 End Class
