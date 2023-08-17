@@ -1,19 +1,50 @@
-﻿Imports System.IO
+﻿Imports TheArtOfDevHtmlRenderer
 
 Public Class GameScreen
 
     Public player As New Player
     Public WithEvents timerSpam As New Timer
-    'Public pipes As New Player
+    Public WithEvents timerPipeAction As New Timer
+    Public pipes As New List(Of Pipe)()
 
 
     Public Sub TimerSpam_Tick(sender As Object, e As EventArgs) Handles timerSpam.Tick
         Dim pipe As New Pipe
-
+        pipes.Add(pipe)
         Me.Controls.Add(pipe.topPipe.modelPicture)
         Me.Controls.Add(pipe.bottomPipe.modelPicture)
-        pipe.timerMove.Interval = 50
-        pipe.timerMove.Enabled = True
+
+        If pipes.Count > 0 Then
+            If pipes(0).topPipe.modelPicture.Location.X <= pipes(0).topPipe.modelPicture.Size.Width Then
+                Me.Controls.Remove(pipes(0).topPipe.modelPicture)
+                Me.Controls.Remove(pipes(0).bottomPipe.modelPicture)
+                pipes.Remove(pipes(0))
+            End If
+        End If
+    End Sub
+
+    Public Sub TimerPipeAction_Tick(sender As Object, e As EventArgs) Handles timerPipeAction.Tick
+        For Each pipe As Pipe In pipes
+            pipe.Move()
+
+            If pipes.Count > 0 Then
+
+                If pipe.qua Then
+
+
+                    If pipe.Safe(New Rectangle(player.modelPicture.Location, player.modelPicture.Size)) Then
+                        player.Die()
+                    End If
+
+                    If pipe.topPipe.modelPicture.Location.X <= player.modelPicture.Location.X Then
+
+                        GameManager.score += 1
+                        scoreLB.Text = GameManager.score.ToString
+                        pipe.qua = False
+                    End If
+                End If
+            End If
+        Next
     End Sub
 
 

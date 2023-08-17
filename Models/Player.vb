@@ -32,7 +32,9 @@ Public Class Player
 
     Public Sub Jump()
         isJump = True
-        modelPicture.Top -= jumpForce
+        If modelPicture.Location.Y > 0 Then
+            modelPicture.Top -= jumpForce
+        End If
         isJump = False
     End Sub
 

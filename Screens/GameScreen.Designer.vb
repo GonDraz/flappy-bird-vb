@@ -25,6 +25,7 @@ Partial Class GameScreen
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GameScreen))
         Me.base = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pauseButton = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.scoreLB = New System.Windows.Forms.Label()
         CType(Me.base, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,12 +54,24 @@ Partial Class GameScreen
         Me.pauseButton.Size = New System.Drawing.Size(64, 54)
         Me.pauseButton.TabIndex = 1
         '
+        'scoreLB
+        '
+        Me.scoreLB.AutoSize = True
+        Me.scoreLB.BackColor = System.Drawing.Color.Transparent
+        Me.scoreLB.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scoreLB.Location = New System.Drawing.Point(468, 12)
+        Me.scoreLB.Name = "scoreLB"
+        Me.scoreLB.Size = New System.Drawing.Size(226, 73)
+        Me.scoreLB.TabIndex = 2
+        Me.scoreLB.Text = "Label1"
+        '
         'GameScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.flappy_bird_vb.My.Resources.Resources.background_day
         Me.ClientSize = New System.Drawing.Size(1280, 688)
+        Me.Controls.Add(Me.scoreLB)
         Me.Controls.Add(Me.pauseButton)
         Me.Controls.Add(Me.base)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -66,9 +79,11 @@ Partial Class GameScreen
         Me.Text = "ViewGamePlay"
         CType(Me.base, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents base As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents pauseButton As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents scoreLB As Label
 End Class
