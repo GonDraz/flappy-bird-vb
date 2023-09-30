@@ -23,6 +23,7 @@ Partial Class Application
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Application))
         Me.topPanel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
@@ -66,8 +67,9 @@ Partial Class Application
         Me.Controls.Add(Me.mainPanel)
         Me.Controls.Add(Me.topPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Application"
-        Me.Text = "Form1"
+        Me.Text = "Flappy Bird"
         Me.ResumeLayout(False)
 
     End Sub

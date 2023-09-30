@@ -1,10 +1,13 @@
-﻿Public Class GameManager
+﻿Imports System.IO
+Imports Guna.UI2.WinForms
+Imports Guna.UI2.WinForms.Suite.Descriptions
+
+Public Class GameManager
     Implements IManager
 
     Public ReadOnly intervalSpam As Int16 = 1000
     Public ReadOnly intervalPipeAction As Int16 = 20
     Public Shared score As Integer = 0
-
 
     Public Enum GameState
         Start
@@ -15,12 +18,21 @@
 
     Public Shared state As GameState
 
+    Public Sub SwichPanel(panel As Panel)
+        HidePanel()
+        panel.Visible = True
+    End Sub
+
+    Public Sub HidePanel()
+        GameScreen.pnlPause.Visible = False
+    End Sub
 
     Public Sub Run() Implements IManager.Run
         AddHandler Events.StartStateInGame, AddressOf OnStartStateInGame
         AddHandler Events.PlayStateInGame, AddressOf OnPlayStateInGame
         AddHandler Events.PauseStateInGame, AddressOf OnPauseStateInGame
         AddHandler Events.LoseStateInGame, AddressOf OnLoseStateInGame
+
     End Sub
 
     Private Sub OnStartStateInGame()
@@ -35,6 +47,8 @@
 
         GameScreen.player.timerAcion.Enabled = False
         GameScreen.player.timerAnimation.Enabled = False
+
+        HidePanel()
     End Sub
 
     Private Sub OnPlayStateInGame()
@@ -46,6 +60,8 @@
 
         GameScreen.player.timerAcion.Enabled = True
         GameScreen.player.timerAnimation.Enabled = True
+
+        HidePanel()
     End Sub
 
     Private Sub OnPauseStateInGame()
@@ -57,6 +73,8 @@
 
         GameScreen.player.timerAcion.Enabled = False
         GameScreen.player.timerAnimation.Enabled = False
+
+        SwichPanel(GameScreen.pnlPause)
     End Sub
     Private Sub OnLoseStateInGame()
         state = GameState.Lose
@@ -64,8 +82,9 @@
         GameScreen.timerSpam.Enabled = False
         GameScreen.timerPipeAction.Enabled = False
 
-
         GameScreen.player.timerAcion.Enabled = False
         GameScreen.player.timerAnimation.Enabled = False
+
+        'Application.SwitchForm(GameOver)
     End Sub
 End Class

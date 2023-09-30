@@ -93,9 +93,79 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property bluebird_downflap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bluebird_downflap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bluebird_midflap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bluebird_midflap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bluebird_upflap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bluebird_upflap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
+        Friend ReadOnly Property favicon() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("favicon", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gameover() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gameover", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property message() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("message", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property pipe_green() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pipe_green", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property pipe_red() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("pipe_red", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -126,6 +196,36 @@ Namespace My.Resources
         Friend ReadOnly Property redbird_upflap() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("redbird_upflap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property yellowbird_downflap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("yellowbird_downflap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property yellowbird_midflap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("yellowbird_midflap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property yellowbird_upflap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("yellowbird_upflap", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

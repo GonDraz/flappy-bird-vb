@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\icons\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
@@ -89,6 +92,12 @@
     <Compile Include="Entities\BaseModel.vb" />
     <Compile Include="Entities\Interfaces\ISubscribable.vb" />
     <Compile Include="Events.vb" />
+    <Compile Include="Screens\GameOver.Designer.vb">
+      <DependentUpon>GameOver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\GameOver.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Screens\MenuScreen.Designer.vb">
       <DependentUpon>MenuScreen.vb</DependentUpon>
     </Compile>
@@ -141,6 +150,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\GameOver.resx">
+      <DependentUpon>GameOver.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\GameScreen.resx">
       <DependentUpon>GameScreen.vb</DependentUpon>
     </EmbeddedResource>
@@ -164,29 +176,25 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Assets\Icons\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\background-day.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\background-night.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\base.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\redbird-downflap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\redbird-upflap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\redbird-midflap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Sprites\pipe-green.png" />
+    <Content Include="Assets\icons\favicon.ico" />
+    <Content Include="Assets\Sprites\background-day.png" />
+    <Content Include="Assets\Sprites\background-night.png" />
+    <Content Include="Assets\Sprites\base.png" />
+    <Content Include="Assets\Sprites\bluebird-downflap.png" />
+    <Content Include="Assets\Sprites\bluebird-midflap.png" />
+    <Content Include="Assets\Sprites\bluebird-upflap.png" />
+    <Content Include="Assets\Sprites\gameover.png" />
+    <Content Include="Assets\Sprites\message.png" />
+    <Content Include="Assets\Sprites\pipe-green.png" />
+    <Content Include="Assets\Sprites\pipe-red.png" />
+    <Content Include="Assets\Sprites\redbird-downflap.png" />
+    <Content Include="Assets\Sprites\redbird-midflap.png" />
+    <Content Include="Assets\Sprites\redbird-upflap.png" />
+    <Content Include="Assets\Sprites\yellowbird-downflap.png" />
+    <Content Include="Assets\Sprites\yellowbird-midflap.png" />
+    <Content Include="Assets\Sprites\yellowbird-upflap.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

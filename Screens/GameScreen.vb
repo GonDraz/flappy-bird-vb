@@ -1,5 +1,4 @@
-﻿Imports TheArtOfDevHtmlRenderer
-
+﻿
 Public Class GameScreen
 
     Public player As New Player
@@ -11,8 +10,8 @@ Public Class GameScreen
     Public Sub TimerSpam_Tick(sender As Object, e As EventArgs) Handles timerSpam.Tick
         Dim pipe As New Pipe
         pipes.Add(pipe)
-        Me.Controls.Add(pipe.topPipe.modelPicture)
-        Me.Controls.Add(pipe.bottomPipe.modelPicture)
+        Controls.Add(pipe.topPipe.modelPicture)
+        Controls.Add(pipe.bottomPipe.modelPicture)
 
         If pipes.Count > 0 Then
             If pipes(0).topPipe.modelPicture.Location.X <= pipes(0).topPipe.modelPicture.Size.Width Then
@@ -51,7 +50,6 @@ Public Class GameScreen
     Private Sub ViewGamePlay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Controls.Add(player.modelPicture)
         Me.DoubleBuffered = True
-        'player.timerAcion.Enabled = True
         flappy_bird_vb.Events.OnStartStateInGame()
     End Sub
 
@@ -84,4 +82,5 @@ Public Class GameScreen
                 Debug.Print("Game State Null")
         End Select
     End Sub
+
 End Class
