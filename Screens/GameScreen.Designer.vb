@@ -29,10 +29,14 @@ Partial Class GameScreen
         Me.pnlPause = New System.Windows.Forms.Panel()
         Me.pnlMenuInGame = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlGameOver = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnReplay = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnReplay = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBack = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnScore = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.base, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPause.SuspendLayout()
+        Me.pnlMenuInGame.SuspendLayout()
         Me.pnlGameOver.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -88,6 +92,9 @@ Partial Class GameScreen
         Me.pnlMenuInGame.BackColor = System.Drawing.Color.White
         Me.pnlMenuInGame.BorderColor = System.Drawing.Color.White
         Me.pnlMenuInGame.BorderRadius = 24
+        Me.pnlMenuInGame.Controls.Add(Me.Label1)
+        Me.pnlMenuInGame.Controls.Add(Me.btnScore)
+        Me.pnlMenuInGame.Controls.Add(Me.btnBack)
         Me.pnlMenuInGame.Location = New System.Drawing.Point(470, 50)
         Me.pnlMenuInGame.Name = "pnlMenuInGame"
         Me.pnlMenuInGame.Size = New System.Drawing.Size(340, 400)
@@ -104,6 +111,18 @@ Partial Class GameScreen
         Me.pnlGameOver.Size = New System.Drawing.Size(1280, 508)
         Me.pnlGameOver.TabIndex = 1
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.flappy_bird_vb.My.Resources.Resources.gameover
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(186, 12)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(624, 236)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 1
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'btnReplay
         '
         Me.btnReplay.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -118,17 +137,43 @@ Partial Class GameScreen
         Me.btnReplay.TabIndex = 0
         Me.btnReplay.Text = "Replay"
         '
-        'Guna2PictureBox1
+        'btnBack
         '
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.flappy_bird_vb.My.Resources.Resources.gameover
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(186, 12)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(624, 236)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 1
-        Me.Guna2PictureBox1.TabStop = False
+        Me.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnBack.ForeColor = System.Drawing.Color.White
+        Me.btnBack.Location = New System.Drawing.Point(83, 352)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(180, 45)
+        Me.btnBack.TabIndex = 1
+        Me.btnBack.Text = "Quay lại menu"
+        '
+        'btnScore
+        '
+        Me.btnScore.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnScore.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnScore.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnScore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnScore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnScore.ForeColor = System.Drawing.Color.White
+        Me.btnScore.Location = New System.Drawing.Point(83, 262)
+        Me.btnScore.Name = "btnScore"
+        Me.btnScore.Size = New System.Drawing.Size(180, 45)
+        Me.btnScore.TabIndex = 5
+        Me.btnScore.Text = "Điểm"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(50, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(249, 55)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Tạm Đừng"
         '
         'GameScreen
         '
@@ -136,8 +181,8 @@ Partial Class GameScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.flappy_bird_vb.My.Resources.Resources.background_day
         Me.ClientSize = New System.Drawing.Size(1280, 688)
-        Me.Controls.Add(Me.pnlGameOver)
         Me.Controls.Add(Me.pnlPause)
+        Me.Controls.Add(Me.pnlGameOver)
         Me.Controls.Add(Me.scoreLB)
         Me.Controls.Add(Me.pauseButton)
         Me.Controls.Add(Me.base)
@@ -146,6 +191,8 @@ Partial Class GameScreen
         Me.Text = "ViewGamePlay"
         CType(Me.base, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlPause.ResumeLayout(False)
+        Me.pnlMenuInGame.ResumeLayout(False)
+        Me.pnlMenuInGame.PerformLayout()
         Me.pnlGameOver.ResumeLayout(False)
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -161,4 +208,7 @@ Partial Class GameScreen
     Friend WithEvents pnlGameOver As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnReplay As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnBack As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnScore As Guna.UI2.WinForms.Guna2Button
 End Class

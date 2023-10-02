@@ -11,6 +11,7 @@ Namespace Managers
             Menu
             Setting
             Login
+            Score
         End Enum
 
 
@@ -49,6 +50,9 @@ Namespace Managers
                     Exit Select
                 Case State.Login
                     Events.OnLoginState()
+                    Exit Select
+                Case State.Score
+                    Events.OnScoreState()
                     Exit Select
                 Case Else
                     Debug.Print("State Null")

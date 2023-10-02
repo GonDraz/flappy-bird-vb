@@ -12,14 +12,15 @@ CREATE TABLE user (
 );
 CREATE TABLE score (
     name  TEXT    NOT NULL
-                  UNIQUE,
+                  ,
     score INTEGER NOT NULL
 );
 CREATE TABLE application (
+    name  TEXT  UNIQUE,
     save INTEGER (0, 1) DEFAULT (0) 
                         NOT NULL
 );
 
-insert into application(save) values (0)
+insert into application(name,save) values ('vungochaiha',0)
 "
 End Class

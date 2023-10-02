@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SQLite
 Imports System.Windows
 Imports System.Windows.Forms.DataFormats
+Imports flappy_bird_vb.Managers
 
 Public Class LoginScreen
     Private Sub LoginScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -93,13 +94,14 @@ Public Class LoginScreen
             DataManager.connection.Open()
 
             MessageBox.Show("Đăng nhập thành công!", "Thành công")
-            DataManager.command.CommandText = "update application SET save = @save"
+            DataManager.command.CommandText = "update application SET name=@name, save = @save"
+            DataManager.command.Parameters.AddWithValue("@name", tbLoginName.Text)
             DataManager.command.Parameters.AddWithValue("@save", Store.ChangeBoolToNum(save.Checked))
 
             DataManager.command.ExecuteNonQuery()
             DataManager.connection.Close()
 
-            flappy_bird_vb.Events.OnMenuState()
+            StateManager.ChangeState(StateManager.State.Menu)
             Return
         Else
             MessageBox.Show("Đăng nhập thất bại!", "Thất bại")

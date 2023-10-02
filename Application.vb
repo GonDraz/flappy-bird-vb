@@ -22,6 +22,11 @@ Public Class Application
         AddHandler flappy_bird_vb.Events.MenuState, AddressOf OnMenuState
         AddHandler flappy_bird_vb.Events.GameState, AddressOf OnGameState
         AddHandler flappy_bird_vb.Events.LoginState, AddressOf OnLoginState
+        AddHandler flappy_bird_vb.Events.ScoreState, AddressOf OnScoreState
+    End Sub
+
+    Private Sub OnScoreState()
+        SwitchForm(ScoreScreen)
     End Sub
 
     Public Sub OnMenuState()
@@ -38,8 +43,6 @@ Public Class Application
     End Sub
 
     Public Sub Quit()
-
-        System.Windows.Forms.Application.Exit()
-
+        Windows.Forms.Application.Exit()
     End Sub
 End Class

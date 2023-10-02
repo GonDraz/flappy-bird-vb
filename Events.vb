@@ -6,6 +6,7 @@ Public MustInherit Class Events
     Public Shared Event GameState As Action
     Public Shared Event MenuState As Action
     Public Shared Event LoginState As Action
+    Public Shared Event ScoreState As Action
 
     Public Shared Event StartStateInGame As Action
     Public Shared Event PlayStateInGame As Action
@@ -30,6 +31,9 @@ Public MustInherit Class Events
     End Sub
     Public Shared Sub OnLoginState()
         RaiseEvent LoginState()
+    End Sub
+    Public Shared Sub OnScoreState()
+        RaiseEvent ScoreState()
     End Sub
 
     Public Shared Sub OnStartStateInGame()

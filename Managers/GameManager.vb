@@ -88,6 +88,20 @@ Public Class GameManager
         GameScreen.player.timerAcion.Enabled = False
         GameScreen.player.timerAnimation.Enabled = False
 
+
+
+        DataManager.connection.Open()
+        DataManager.command.Connection = DataManager.connection
+
+        DataManager.command.CommandText = "insert into score(name,score) values ('@name',@score)"
+        DataManager.command.Parameters.AddWithValue("@name", DataManager.username)
+        DataManager.command.Parameters.AddWithValue("@score", score)
+
+        DataManager.command.ExecuteNonQuery()
+        DataManager.connection.Close()
+
+
+
         SwichPanel(GameScreen.pnlGameOver)
     End Sub
 

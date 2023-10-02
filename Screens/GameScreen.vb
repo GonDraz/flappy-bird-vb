@@ -1,5 +1,6 @@
 ﻿
 Imports flappy_bird_vb.GameManager
+Imports flappy_bird_vb.Managers
 
 Public Class GameScreen
 
@@ -105,5 +106,13 @@ Public Class GameScreen
     Private Sub btnReplay_Click(sender As Object, e As EventArgs) Handles btnReplay.Click
         RemovePicture()
         flappy_bird_vb.Events.OnStartStateInGame()
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        StateManager.ChangeState(StateManager.State.Menu)
+    End Sub
+
+    Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
+        StateManager.ChangeState(StateManager.State.Score)
     End Sub
 End Class

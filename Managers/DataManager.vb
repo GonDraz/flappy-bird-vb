@@ -13,6 +13,8 @@ Public Class DataManager
     Public Shared connection As New SQLiteConnection(connString)
     Public Shared command As New SQLiteCommand("", connection)
 
+    Public Shared username As String
+
 
     Private isOpened As Boolean = False
 
@@ -41,6 +43,14 @@ Public Class DataManager
         Else
             StateManager.ChangeState(StateManager.State.Menu)
         End If
+        connection.Close()
+
+
+        connection.Open()
+        command.Connection = connection
+
+        command.CommandText = "SELECT name FROM application LIMIT 1;"
+        username = command.ExecuteScalar()
         connection.Close()
 
     End Sub
