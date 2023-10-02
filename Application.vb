@@ -21,6 +21,7 @@ Public Class Application
     Public Sub Subscribe() Implements ISubscribable.Subscribe
         AddHandler flappy_bird_vb.Events.MenuState, AddressOf OnMenuState
         AddHandler flappy_bird_vb.Events.GameState, AddressOf OnGameState
+        AddHandler flappy_bird_vb.Events.LoginState, AddressOf OnLoginState
     End Sub
 
     Public Sub OnMenuState()
@@ -29,9 +30,16 @@ Public Class Application
     Public Sub OnGameState()
         SwitchForm(GameScreen)
     End Sub
-
-
+    Public Sub OnLoginState()
+        SwitchForm(LoginScreen)
+    End Sub
 
     Public Sub Unsubscribe() Implements ISubscribable.Unsubscribe
+    End Sub
+
+    Public Sub Quit()
+
+        System.Windows.Forms.Application.Exit()
+
     End Sub
 End Class

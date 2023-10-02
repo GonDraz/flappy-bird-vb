@@ -1,4 +1,6 @@
 ﻿
+Imports flappy_bird_vb.GameManager
+
 Public Class GameScreen
 
     Public player As New Player
@@ -12,11 +14,10 @@ Public Class GameScreen
         pipes.Add(pipe)
         Controls.Add(pipe.topPipe.modelPicture)
         Controls.Add(pipe.bottomPipe.modelPicture)
-
         If pipes.Count > 0 Then
             If pipes(0).topPipe.modelPicture.Location.X <= pipes(0).topPipe.modelPicture.Size.Width Then
-                Me.Controls.Remove(pipes(0).topPipe.modelPicture)
-                Me.Controls.Remove(pipes(0).bottomPipe.modelPicture)
+                Controls.Remove(pipes(0).topPipe.modelPicture)
+                Controls.Remove(pipes(0).bottomPipe.modelPicture)
                 pipes.Remove(pipes(0))
             End If
         End If
@@ -30,15 +31,14 @@ Public Class GameScreen
 
                 If pipe.qua Then
 
-
                     If pipe.Safe(New Rectangle(player.modelPicture.Location, player.modelPicture.Size)) Then
                         player.Die()
                     End If
 
                     If pipe.topPipe.modelPicture.Location.X <= player.modelPicture.Location.X Then
 
-                        GameManager.score += 1
-                        scoreLB.Text = GameManager.score.ToString
+                        score += 1
+                        scoreLB.Text = score.ToString
                         pipe.qua = False
                     End If
                 End If
@@ -48,12 +48,19 @@ Public Class GameScreen
 
 
     Private Sub ViewGamePlay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Controls.Add(player.modelPicture)
-        Me.DoubleBuffered = True
+        AddHandler flappy_bird_vb.Events.StartStateInGame, AddressOf OnStartStateInGame
+
         flappy_bird_vb.Events.OnStartStateInGame()
+        DoubleBuffered = True
     End Sub
 
-    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles Me.MouseDown
+    Private Sub OnStartStateInGame()
+        player = New Player
+        pipes = New List(Of Pipe)()
+        Controls.Add(player.modelPicture)
+    End Sub
+
+    Private Sub Form1_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
         OnClick()
 
     End Sub
@@ -67,20 +74,36 @@ Public Class GameScreen
     End Sub
 
     Private Sub OnClick()
-        Select Case GameManager.state
-            Case GameManager.GameState.Start
+        Select Case state
+            Case GameState.Start
                 flappy_bird_vb.Events.OnPlayStateInGame()
                 Exit Select
-            Case GameManager.GameState.Play
+            Case GameState.Play
                 player.Jump()
                 Exit Select
-            Case GameManager.GameState.Pause
+            Case GameState.Pause
                 flappy_bird_vb.Events.OnPlayStateInGame()
                 player.Jump()
+                Exit Select
+            Case GameState.Lose
                 Exit Select
             Case Else
                 Debug.Print("Game State Null")
         End Select
     End Sub
 
+
+    Private Sub RemovePicture()
+
+        Controls.Remove(player.modelPicture)
+        For Each pipe In pipes
+            Controls.Remove(pipe.topPipe.modelPicture)
+            Controls.Remove(pipe.bottomPipe.modelPicture)
+        Next
+    End Sub
+
+    Private Sub btnReplay_Click(sender As Object, e As EventArgs) Handles btnReplay.Click
+        RemovePicture()
+        flappy_bird_vb.Events.OnStartStateInGame()
+    End Sub
 End Class

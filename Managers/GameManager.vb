@@ -25,6 +25,7 @@ Public Class GameManager
 
     Public Sub HidePanel()
         GameScreen.pnlPause.Visible = False
+        GameScreen.pnlGameOver.Visible = False
     End Sub
 
     Public Sub Run() Implements IManager.Run
@@ -37,6 +38,8 @@ Public Class GameManager
 
     Private Sub OnStartStateInGame()
         state = GameState.Start
+
+        score = 0
 
         GameScreen.timerSpam.Interval = intervalSpam
         GameScreen.timerPipeAction.Interval = intervalPipeAction
@@ -85,6 +88,7 @@ Public Class GameManager
         GameScreen.player.timerAcion.Enabled = False
         GameScreen.player.timerAnimation.Enabled = False
 
-        'Application.SwitchForm(GameOver)
+        SwichPanel(GameScreen.pnlGameOver)
     End Sub
+
 End Class

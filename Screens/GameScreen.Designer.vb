@@ -28,8 +28,13 @@ Partial Class GameScreen
         Me.scoreLB = New System.Windows.Forms.Label()
         Me.pnlPause = New System.Windows.Forms.Panel()
         Me.pnlMenuInGame = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnlGameOver = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnReplay = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.base, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPause.SuspendLayout()
+        Me.pnlGameOver.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'base
@@ -88,13 +93,50 @@ Partial Class GameScreen
         Me.pnlMenuInGame.Size = New System.Drawing.Size(340, 400)
         Me.pnlMenuInGame.TabIndex = 0
         '
-
+        'pnlGameOver
+        '
+        Me.pnlGameOver.BackColor = System.Drawing.Color.Transparent
+        Me.pnlGameOver.Controls.Add(Me.Guna2PictureBox1)
+        Me.pnlGameOver.Controls.Add(Me.btnReplay)
+        Me.pnlGameOver.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlGameOver.Location = New System.Drawing.Point(0, 0)
+        Me.pnlGameOver.Name = "pnlGameOver"
+        Me.pnlGameOver.Size = New System.Drawing.Size(1280, 508)
+        Me.pnlGameOver.TabIndex = 1
+        '
+        'btnReplay
+        '
+        Me.btnReplay.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnReplay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnReplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnReplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnReplay.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnReplay.ForeColor = System.Drawing.Color.White
+        Me.btnReplay.Location = New System.Drawing.Point(418, 312)
+        Me.btnReplay.Name = "btnReplay"
+        Me.btnReplay.Size = New System.Drawing.Size(180, 45)
+        Me.btnReplay.TabIndex = 0
+        Me.btnReplay.Text = "Replay"
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.flappy_bird_vb.My.Resources.Resources.gameover
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(186, 12)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(624, 236)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 1
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'GameScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.flappy_bird_vb.My.Resources.Resources.background_day
         Me.ClientSize = New System.Drawing.Size(1280, 688)
+        Me.Controls.Add(Me.pnlGameOver)
         Me.Controls.Add(Me.pnlPause)
         Me.Controls.Add(Me.scoreLB)
         Me.Controls.Add(Me.pauseButton)
@@ -104,6 +146,8 @@ Partial Class GameScreen
         Me.Text = "ViewGamePlay"
         CType(Me.base, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlPause.ResumeLayout(False)
+        Me.pnlGameOver.ResumeLayout(False)
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -114,4 +158,7 @@ Partial Class GameScreen
     Friend WithEvents scoreLB As Label
     Friend WithEvents pnlPause As Panel
     Friend WithEvents pnlMenuInGame As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnlGameOver As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents btnReplay As Guna.UI2.WinForms.Guna2Button
 End Class

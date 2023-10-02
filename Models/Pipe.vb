@@ -40,8 +40,6 @@ Public Class Pipe
 
     Public qua As Boolean = True
 
-
-
     Public Function Safe(rectPlayer As Rectangle) As Boolean
 
         Dim rectTop As New Rectangle(topPipe.modelPicture.Location, topPipe.modelPicture.Size)

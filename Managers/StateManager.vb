@@ -1,4 +1,6 @@
-﻿Namespace Managers
+﻿Imports System.Data.SqlClient
+
+Namespace Managers
 
     Public Class StateManager
         Implements IManager
@@ -8,15 +10,11 @@
             Game
             Menu
             Setting
+            Login
         End Enum
 
 
         Public Sub Run() Implements IManager.Run
-            AddHandler Events.ApplicationStarted, AddressOf OnApplicationStarted
-        End Sub
-
-        Public Sub OnApplicationStarted()
-            ChangeState(State.Menu)
         End Sub
 
         Public Shared currentState As State
@@ -49,14 +47,17 @@
                 Case State.Game
                     Events.OnGameState()
                     Exit Select
+                Case State.Login
+                    Events.OnLoginState()
+                    Exit Select
                 Case Else
                     Debug.Print("State Null")
             End Select
         End Sub
+
         Public Shared Sub ChangeStateToPrevious()
             ChangeState(previousState)
         End Sub
 
     End Class
-
 End Namespace

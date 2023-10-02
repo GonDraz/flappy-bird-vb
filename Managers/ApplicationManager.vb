@@ -6,7 +6,7 @@ Namespace Managers
         Private ReadOnly managers As New List(Of Type)() From {
         GetType(StateManager),
         GetType(GameManager),
-        GetType(PlayerManager)
+        GetType(DataManager)
         }
 
 
