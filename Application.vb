@@ -31,6 +31,8 @@ Public Class Application
 
     Public Sub OnMenuState()
         SwitchForm(MenuScreen)
+        MenuScreen.textUser.Text = DataManager.username
+
     End Sub
     Public Sub OnGameState()
         SwitchForm(GameScreen)

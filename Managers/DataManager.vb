@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data.OleDb
+Imports System.Data.SqlClient
 Imports System.Data.SQLite
 Imports System.IO
 Imports flappy_bird_vb.Managers
@@ -35,7 +36,6 @@ Public Class DataManager
 
         connection.Open()
         command.Connection = connection
-
         command.CommandText = "SELECT save FROM application LIMIT 1;"
         Dim sqlResponse As Integer = command.ExecuteScalar()
         If sqlResponse = 0 Then
@@ -45,22 +45,19 @@ Public Class DataManager
         End If
         connection.Close()
 
-
         connection.Open()
         command.Connection = connection
-
         command.CommandText = "SELECT name FROM application LIMIT 1;"
-        username = command.ExecuteScalar()
-        connection.Close()
 
+        Dim name As String = command.ExecuteScalar()
+        username = name
+        connection.Close()
     End Sub
 
     Private Sub LoadData()
         connection.Open()
         command.Connection = connection
-
         command.CommandText = "Select * from application"
-
         Try
             command.ExecuteNonQuery()
         Catch ex As Exception
@@ -70,7 +67,6 @@ Public Class DataManager
             command.ExecuteNonQuery()
             connection.Close()
         End Try
-
         Debug.Print("database tại : " & dbPath)
         connection.Close()
         isOpened = True

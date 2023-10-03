@@ -115,4 +115,8 @@ Public Class GameScreen
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
         StateManager.ChangeState(StateManager.State.Score)
     End Sub
+
+    Private Sub btnResume_Click(sender As Object, e As EventArgs) Handles btnResume.Click
+        flappy_bird_vb.Events.OnPlayStateInGame()
+    End Sub
 End Class

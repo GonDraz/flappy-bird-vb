@@ -26,6 +26,8 @@ Partial Class MenuScreen
         Me.base = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnScore = New Guna.UI2.WinForms.Guna2Button()
         Me.btnQuit = New Guna.UI2.WinForms.Guna2Button()
+        Me.textUser = New System.Windows.Forms.Label()
+        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.base, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,11 +80,34 @@ Partial Class MenuScreen
         Me.btnQuit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btnQuit.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btnQuit.ForeColor = System.Drawing.Color.White
-        Me.btnQuit.Location = New System.Drawing.Point(533, 411)
+        Me.btnQuit.Location = New System.Drawing.Point(533, 379)
         Me.btnQuit.Name = "btnQuit"
         Me.btnQuit.Size = New System.Drawing.Size(180, 45)
         Me.btnQuit.TabIndex = 5
         Me.btnQuit.Text = "Thoát"
+        '
+        'textUser
+        '
+        Me.textUser.AutoSize = True
+        Me.textUser.Location = New System.Drawing.Point(12, 9)
+        Me.textUser.Name = "textUser"
+        Me.textUser.Size = New System.Drawing.Size(39, 13)
+        Me.textUser.TabIndex = 6
+        Me.textUser.Text = "Label1"
+        '
+        'btnLogout
+        '
+        Me.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnLogout.ForeColor = System.Drawing.Color.White
+        Me.btnLogout.Location = New System.Drawing.Point(533, 457)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(180, 45)
+        Me.btnLogout.TabIndex = 7
+        Me.btnLogout.Text = "Đăng xuất"
         '
         'MenuScreen
         '
@@ -90,6 +115,8 @@ Partial Class MenuScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.flappy_bird_vb.My.Resources.Resources.background_day
         Me.ClientSize = New System.Drawing.Size(1280, 688)
+        Me.Controls.Add(Me.btnLogout)
+        Me.Controls.Add(Me.textUser)
         Me.Controls.Add(Me.btnScore)
         Me.Controls.Add(Me.btnQuit)
         Me.Controls.Add(Me.base)
@@ -100,6 +127,7 @@ Partial Class MenuScreen
         Me.Text = "Menu"
         CType(Me.base, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -107,4 +135,6 @@ Partial Class MenuScreen
     Friend WithEvents base As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnScore As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnQuit As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents textUser As Label
+    Friend WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
 End Class

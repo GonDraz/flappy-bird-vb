@@ -28,12 +28,13 @@ Partial Class GameScreen
         Me.scoreLB = New System.Windows.Forms.Label()
         Me.pnlPause = New System.Windows.Forms.Panel()
         Me.pnlMenuInGame = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnScore = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBack = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlGameOver = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnReplay = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnBack = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnScore = New Guna.UI2.WinForms.Guna2Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnResume = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.base, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPause.SuspendLayout()
         Me.pnlMenuInGame.SuspendLayout()
@@ -92,6 +93,7 @@ Partial Class GameScreen
         Me.pnlMenuInGame.BackColor = System.Drawing.Color.White
         Me.pnlMenuInGame.BorderColor = System.Drawing.Color.White
         Me.pnlMenuInGame.BorderRadius = 24
+        Me.pnlMenuInGame.Controls.Add(Me.btnResume)
         Me.pnlMenuInGame.Controls.Add(Me.Label1)
         Me.pnlMenuInGame.Controls.Add(Me.btnScore)
         Me.pnlMenuInGame.Controls.Add(Me.btnBack)
@@ -99,6 +101,44 @@ Partial Class GameScreen
         Me.pnlMenuInGame.Name = "pnlMenuInGame"
         Me.pnlMenuInGame.Size = New System.Drawing.Size(340, 400)
         Me.pnlMenuInGame.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(50, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(249, 55)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Tạm Đừng"
+        '
+        'btnScore
+        '
+        Me.btnScore.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnScore.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnScore.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnScore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnScore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnScore.ForeColor = System.Drawing.Color.White
+        Me.btnScore.Location = New System.Drawing.Point(83, 262)
+        Me.btnScore.Name = "btnScore"
+        Me.btnScore.Size = New System.Drawing.Size(180, 45)
+        Me.btnScore.TabIndex = 5
+        Me.btnScore.Text = "Điểm"
+        '
+        'btnBack
+        '
+        Me.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnBack.ForeColor = System.Drawing.Color.White
+        Me.btnBack.Location = New System.Drawing.Point(83, 352)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(180, 45)
+        Me.btnBack.TabIndex = 1
+        Me.btnBack.Text = "Quay lại menu"
         '
         'pnlGameOver
         '
@@ -137,43 +177,19 @@ Partial Class GameScreen
         Me.btnReplay.TabIndex = 0
         Me.btnReplay.Text = "Replay"
         '
-        'btnBack
+        'btnResume
         '
-        Me.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnBack.ForeColor = System.Drawing.Color.White
-        Me.btnBack.Location = New System.Drawing.Point(83, 352)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(180, 45)
-        Me.btnBack.TabIndex = 1
-        Me.btnBack.Text = "Quay lại menu"
-        '
-        'btnScore
-        '
-        Me.btnScore.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnScore.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnScore.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnScore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnScore.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btnScore.ForeColor = System.Drawing.Color.White
-        Me.btnScore.Location = New System.Drawing.Point(83, 262)
-        Me.btnScore.Name = "btnScore"
-        Me.btnScore.Size = New System.Drawing.Size(180, 45)
-        Me.btnScore.TabIndex = 5
-        Me.btnScore.Text = "Điểm"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(50, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(249, 55)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Tạm Đừng"
+        Me.btnResume.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnResume.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnResume.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnResume.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnResume.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btnResume.ForeColor = System.Drawing.Color.White
+        Me.btnResume.Location = New System.Drawing.Point(83, 122)
+        Me.btnResume.Name = "btnResume"
+        Me.btnResume.Size = New System.Drawing.Size(180, 45)
+        Me.btnResume.TabIndex = 7
+        Me.btnResume.Text = "Chơi tiếp "
         '
         'GameScreen
         '
@@ -211,4 +227,5 @@ Partial Class GameScreen
     Friend WithEvents btnBack As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnScore As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnResume As Guna.UI2.WinForms.Guna2Button
 End Class

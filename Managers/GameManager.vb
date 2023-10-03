@@ -40,6 +40,7 @@ Public Class GameManager
         state = GameState.Start
 
         score = 0
+        GameScreen.scoreLB.Text = score
 
         GameScreen.timerSpam.Interval = intervalSpam
         GameScreen.timerPipeAction.Interval = intervalPipeAction

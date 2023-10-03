@@ -12,4 +12,8 @@ Public Class MenuScreen
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
         StateManager.ChangeState(StateManager.State.Score)
     End Sub
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        StateManager.ChangeState(StateManager.State.Login)
+    End Sub
 End Class
